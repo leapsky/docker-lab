@@ -1,17 +1,19 @@
+FROM python:3.12-alpine AS builder
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt -t /opt/venv
+
 FROM python:3.12-alpine
 
-COPY ./requirements.txt /app/requirements.txt
+RUN adduser -S www
+USER www
 
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+COPY --from=builder /opt/venv /usr/local/lib/python3.12/site-packages
 
-COPY . /app
+COPY . .
 
-RUN adduser -S www
-
-USER www
-
-ENTRYPOINT [ "python3" ]
-
-CMD [ "/app/app.py" ]
+ENTRYPOINT ["python3"]
+CMD ["/app/app.py"]
