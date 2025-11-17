@@ -9,4 +9,5 @@ def hello_world():
 
 
 if __name__ == '__main__':
-   app.run(debug=True, host='0.0.0.0', port=8080)
+   # BUG FIX #8: Исправлен порт приложения для соответствия nginx upstream: 8080 -> 81
+   app.run(debug=True, host='0.0.0.0', port=81)

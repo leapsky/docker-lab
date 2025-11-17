@@ -3,17 +3,20 @@ services:
   app1:
     build: ./app1
     volumes:
-      - ./storage:/storage:ro
+      # BUG FIX #1: Исправлен путь монтирования для Flask templates
+      - ./storage:/app/templates:ro
 
   app2:
     build: ./app2
     volumes:
-      - ./storage:/storage:ro
+      # BUG FIX #1: Исправлен путь монтирования для Flask templates
+      - ./storage:/app/templates:ro
 
   nginx:
     build: ./nginx
     ports:
-    - "445:445"
+      # BUG FIX #2: Исправлен маппинг портов для HTTPS
+    - "443:443"
     depends_on:
       - app1
       - app2
