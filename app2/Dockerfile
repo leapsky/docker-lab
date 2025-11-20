@@ -2,7 +2,8 @@ FROM python:3.12-alpine
 
 COPY ./requirements.txt /requirements.txt
 
-WORKDIR /
+# Изменена рабочая директория на /app для соответствия структуре проекта
+WORKDIR /app
 
 RUN pip install -r requirements.txt
 
@@ -14,4 +15,5 @@ USER www
 
 ENTRYPOINT [ "python3" ]
 
-CMD [ "app1.py" ]
+# Исправлено имя исполняемого файла
+CMD [ "app2.py" ]
