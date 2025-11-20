@@ -1,0 +1,3 @@
+.idea
+./nginx/www.example.com.crt
+./nginx/www.example.com.key
