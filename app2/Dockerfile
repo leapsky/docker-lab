@@ -14,4 +14,5 @@ USER www
 
 ENTRYPOINT [ "python3" ]
 
-CMD [ "app1.py" ]
+# ИСПРАВЛЕНО: Изменено имя файла с "app1.py" на "app2.py"
+CMD [ "app2.py" ]
