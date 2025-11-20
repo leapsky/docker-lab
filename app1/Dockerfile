@@ -1,12 +1,10 @@
 FROM python:3.12-alpine
 
-COPY ./requirements.txt /requirements.txt
+WORKDIR /app
 
-WORKDIR /
+COPY . /app
 
 RUN pip install -r requirements.txt
-
-COPY . /
 
 RUN adduser -S www
 
