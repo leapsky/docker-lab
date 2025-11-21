@@ -14,4 +14,5 @@ USER www
 
 ENTRYPOINT [ "python3" ]
 
-CMD [ "app1.py" ]
+# Исправлена ошибка в имени вызываемого файла
+CMD [ "app2.py" ]
