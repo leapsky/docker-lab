@@ -3,17 +3,20 @@ services:
   app1:
     build: ./app1
     volumes:
-      - ./storage:/storage:ro
+    # Неверный путь монтирования
+      - ./storage:/app/templates:ro
 
   app2:
     build: ./app2
     volumes:
-      - ./storage:/storage:ro
+    # Неверный путь монтирования
+      - ./storage:/app/templates:ro
 
   nginx:
     build: ./nginx
     ports:
-    - "445:445"
+    # Неверный порт для https
+    - "443:443"
     depends_on:
       - app1
       - app2
