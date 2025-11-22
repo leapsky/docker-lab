@@ -1,8 +1,11 @@
 from flask import Flask, render_template
 
-app = Flask(__name__)
+# Подключаем общий каталог шаблонов ../storage
+app = Flask(__name__, template_folder='../storage')
 
 
+# Обрабатываем запрос по /
+@app.route('/')
 @app.route('/hello')
 def hello_world():
     return render_template('index.html', source_app='app1')

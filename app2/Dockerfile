@@ -14,4 +14,5 @@ USER www
 
 ENTRYPOINT [ "python3" ]
 
-CMD [ "app1.py" ]
+# Правильное имя бинарника
+CMD [ "app2.py" ]
