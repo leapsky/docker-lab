@@ -3,17 +3,17 @@ services:
   app1:
     build: ./app1
     volumes:
-      - ./storage:/storage:ro
+      - ./storage:/templates:ro
 
   app2:
     build: ./app2
     volumes:
-      - ./storage:/storage:ro
+      - ./storage:/templates:ro
 
   nginx:
     build: ./nginx
     ports:
-    - "445:445"
+    - "443:443"
     depends_on:
       - app1
       - app2
