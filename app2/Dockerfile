@@ -14,4 +14,5 @@ USER www
 
 ENTRYPOINT [ "python3" ]
 
-CMD [ "app1.py" ]
+# set correct app
+CMD [ "app2.py" ]
