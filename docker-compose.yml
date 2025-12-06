@@ -13,7 +13,7 @@ services:
   nginx:
     build: ./nginx
     ports:
-    - "445:445"
+    - "443:443"
     depends_on:
       - app1
       - app2
